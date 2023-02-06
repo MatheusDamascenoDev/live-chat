@@ -39,7 +39,7 @@ io.on("connection", (socket) => {
 
 // em modo de desenvolvimento comentar o import path e os dois codigos abaixo.
 app.use(express.static(path.join(_dirname, "/client/build")));
-app.get("*", (req, res) =>
+app.get("/", (req, res) =>
   res.sendFile(path.join(_dirname, "/client/build/index.html"))
 );
 
