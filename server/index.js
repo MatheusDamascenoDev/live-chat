@@ -37,5 +37,5 @@ app.use(express.static(path.join(__dirname, "/client/build")));
 app.get("*", (req, res) =>
   res.sendFile(path.join(__dirname, "/client/build/index.html"))
 );
-
-server.listen(3001, () => console.log('🔥Server started on port 3001'));
+const port = process.env.PORT || 3000;
+server.listen(port, () => console.log(` 🔥Server started on port ${port}` ));
