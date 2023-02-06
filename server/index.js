@@ -13,7 +13,7 @@ const _dirname = path.resolve();
 
 const io = new Server(server, {
   cors: {
-    origin: "https://livechatapp.herokuapp.com:3000",
+    origin: "https://livechatapp.herokuapp.com",
     methods: ["GET","POST"],
     allowedHeaders: ['*'],
     credentials: true
