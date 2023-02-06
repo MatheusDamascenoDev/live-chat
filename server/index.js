@@ -7,14 +7,13 @@ const path = require("path");
 const app = express();
 app.use(cors());
 const port =  3001;
-const portIO =  3000;
 
 const server = http.createServer(app);
 const _dirname = path.resolve();
 
 const io = new Server(server, {
   cors: {
-    origin: `http://localhost:${portIO}`,
+    origin: "http://localhost:3000",
     methods: ["GET", "POST"],
   },
 });
@@ -36,7 +35,7 @@ io.on("connection", (socket) => {
   });
 });
 
-
+// em modo de desenvolvimento comentar o import path e os dois codigos abaixo.
 app.use(express.static(path.join(_dirname, "/client/build")));
 app.get("*", (req, res) =>
   res.sendFile(path.join(_dirname, "/client/build/index.html"))
