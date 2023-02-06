@@ -5,6 +5,11 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x",
+    "yarn": "1.x"
+  },
   "scripts": {
     "build": "cd server && npm install  && cd ../client && npm install && npm run build",
     "start": "node server/server.js",
