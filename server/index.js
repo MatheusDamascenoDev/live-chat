@@ -6,7 +6,7 @@ const path = require("path");
 
 const app = express();
 app.use(cors());
-const port =  3001;
+const port = process.env.PORT || 5000;
 
 const server = http.createServer(app);
 const _dirname = path.resolve();
