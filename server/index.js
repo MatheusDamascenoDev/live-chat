@@ -37,9 +37,9 @@ io.on("connection", (socket) => {
 });
 
 // em modo de desenvolvimento comentar o import path e os dois codigos abaixo.
-app.use(express.static(path.join(__dirname, "/client/build")));
+app.use(express.static(path.join(__dirname, "/client/public")));
 app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "/client/build"))
+  res.sendFile(path.join(__dirname, "/client/public"))
 );
 
 server.listen(port, () => console.log(` 🔥Server started on port ${port}` ));
