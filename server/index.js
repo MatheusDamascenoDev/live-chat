@@ -9,6 +9,7 @@ app.use(cors());
 const port = process.env.PORT || 5000;
 
 const server = http.createServer(app);
+const _dirname = path.resolve();
 
 const io = new Server(server, {
   cors: {
@@ -37,9 +38,9 @@ io.on("connection", (socket) => {
 });
 
 // em modo de desenvolvimento comentar o import path e os dois codigos abaixo.
-app.use(express.static(path.join(__dirname, "/client/build")));
+app.use(express.static(path.join(_dirname, "/client/build")));
 app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "/client/build"))
+  res.sendFile(path.join(_dirname, "/client/build/index.html"))
 );
 
 server.listen(port, () => console.log(` 🔥Server started on port ${port}` ));
