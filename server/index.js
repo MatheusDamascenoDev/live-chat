@@ -6,14 +6,14 @@ const path = require("path");
 
 const app = express();
 app.use(cors());
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3001;
 
 const server = http.createServer(app);
 const _dirname = path.resolve();
 
 const io = new Server(server, {
   cors: {
-    origin: "https://livechatapp.herokuapp.com",
+    origin: "http://localhost:3000",
     methods: ["*"],
     allowedHeaders: ['*'],
     credentials: true
