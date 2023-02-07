@@ -13,7 +13,7 @@ const _dirname = path.resolve();
 
 const io = new Server(server, {
   cors: {
-    origin: "https://live-chat-sigma.vercel.app",
+    origin: "https://localhost:3000",
     methods: ["GET","POST"],
     allowedHeaders: ['*'],
     credentials: true
